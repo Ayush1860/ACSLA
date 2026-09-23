@@ -6,8 +6,9 @@ star-schema semantic model.
 
 ![What drives passenger satisfaction](screenshots/driver_importance.png)
 
-> 📊 **Dashboard preview:** *add `screenshots/dashboard.gif` after building the report in Power BI Desktop (see [build guide](docs/dashboard_build_guide.md)).*
-> 🔗 **Live report:** *add the Power BI Service / Publish-to-web link here.*
+Interactive preview: https://ayush1860.github.io/ACSLA/ (Python/Plotly build of the same pages).
+
+Power BI report screenshots: in progress.
 
 ---
 
@@ -166,12 +167,16 @@ python scripts/download_data.py        # Kaggle API if configured, else a public
 python scripts/clean.py                # -> data/processed/*.csv (star schema)
 python scripts/driver_analysis.py      # -> screenshots/driver_importance.png
 python scripts/build_notebook.py --execute   # (re)build + run notebooks/01_eda.ipynb
+python scripts/build_web_dashboard.py  # -> docs/index.html (interactive Plotly preview)
 python -m pytest                        # unit tests for the cleaning logic
 ```
 
 Then open **`powerbi/AirlineAnalytics.pbip`** in Power BI Desktop, point the `DataFolder`
 parameter at your `data/processed/` folder (Transform data → Edit parameters) and refresh.
 Full steps: [docs/dashboard_build_guide.md](docs/dashboard_build_guide.md).
+
+> **Note:** the `DataFolder` parameter defaults to `C:\ACSLA\data\processed\` and must be
+> changed to your local path (keep the trailing backslash), otherwise the refresh fails.
 
 `python scripts/build_pbip.py` regenerates the Power BI semantic model, the report pages and
 `docs/dax_measures.md` from one definition.
@@ -190,6 +195,7 @@ ACSLA/
 │   ├── clean.py                  # nulls, types, bands, star-schema export
 │   ├── driver_analysis.py        # logistic regression + permutation importance + what-if
 │   ├── build_notebook.py         # generates the EDA notebook
+│   ├── build_web_dashboard.py    # generates docs/index.html (Plotly preview)
 │   └── build_pbip.py             # generates the Power BI project + DAX docs
 ├── powerbi/
 │   ├── AirlineAnalytics.pbip
@@ -197,6 +203,7 @@ ACSLA/
 │   ├── AirlineAnalytics.Report/          # 4 report pages
 │   └── theme/AirlineTheme.json
 ├── docs/
+│   ├── index.html                # interactive dashboard (GitHub Pages)
 │   ├── dax_measures.md
 │   ├── data_model.md
 │   └── dashboard_build_guide.md
