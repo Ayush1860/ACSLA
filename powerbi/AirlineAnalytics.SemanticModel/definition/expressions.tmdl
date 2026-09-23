@@ -1,0 +1,6 @@
+expression DataFolder = "C:\ACSLA\data\processed\" meta [IsParameterQuery = true, Type = "Text", IsParameterQueryRequired = true]
+	lineageTag: 09e50c8b-a8e8-593b-92b5-8391ca27f057
+
+	annotation PBI_ResultType = Text
+
+	annotation PBI_NavigationStepName = Navigation

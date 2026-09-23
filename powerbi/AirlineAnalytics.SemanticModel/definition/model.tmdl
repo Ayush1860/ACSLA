@@ -1,0 +1,11 @@
+model Model
+	culture: en-US
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-US
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation PBI_QueryOrder = ["DataFolder", "Fact_Flights", "Dim_Customer", "Dim_Travel", "Dim_Service", "Fact_Service_Ratings"]
+
+annotation __PBI_TimeIntelligenceEnabled = 0

@@ -1,0 +1,78 @@
+table Dim_Travel
+	lineageTag: fd741018-8819-53b5-bdf9-1cab17099496
+
+	column travel_id
+		dataType: int64
+		formatString: 0
+		isHidden
+		lineageTag: 1ddea467-d41b-5dce-baf2-c50ab064b301
+		summarizeBy: none
+		sourceColumn: travel_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column travel_type
+		dataType: string
+		lineageTag: 81c8df92-bfd0-5e26-8ed9-c75808b6c113
+		summarizeBy: none
+		sourceColumn: travel_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column class
+		dataType: string
+		lineageTag: d1f482ef-04cb-557f-b012-eb717cf11324
+		summarizeBy: none
+		sourceColumn: class
+		sortByColumn: class_order
+
+		annotation SummarizationSetBy = Automatic
+
+	column distance_band
+		dataType: string
+		lineageTag: 598cc510-1714-57cf-b231-6ee9469d10ff
+		summarizeBy: none
+		sourceColumn: distance_band
+		sortByColumn: distance_band_order
+
+		annotation SummarizationSetBy = Automatic
+
+	column class_order
+		dataType: int64
+		formatString: 0
+		isHidden
+		lineageTag: 827c4396-2323-5587-b55f-a8647a46b5ba
+		summarizeBy: none
+		sourceColumn: class_order
+
+		annotation SummarizationSetBy = Automatic
+
+	column distance_band_order
+		dataType: int64
+		formatString: 0
+		isHidden
+		lineageTag: 661ac2c5-9d65-5dcd-b20b-de639782dcc7
+		summarizeBy: none
+		sourceColumn: distance_band_order
+
+		annotation SummarizationSetBy = Automatic
+
+	column trip_segment
+		dataType: string
+		lineageTag: b548ff78-03b3-5f21-8716-b5d7610af912
+		summarizeBy: none
+		sourceColumn: trip_segment
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Dim_Travel = m
+		mode: import
+		source =
+			let
+			    Source = Csv.Document(File.Contents(DataFolder & "dim_travel.csv"), [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+			    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+			    Typed = Table.TransformColumnTypes(Promoted, {{"travel_id", Int64.Type}, {"travel_type", type text}, {"class", type text}, {"distance_band", type text}, {"class_order", Int64.Type}, {"distance_band_order", Int64.Type}, {"trip_segment", type text}}, "en-US")
+			in
+			    Typed
+
+	annotation PBI_ResultType = Table

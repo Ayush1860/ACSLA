@@ -1,0 +1,19 @@
+feature,label,importance,std,rank,coefficient
+inflight_wifi_service,Inflight Wi-Fi,0.0736,0.0016,1,1.037
+travel_type,Travel Type,0.0723,0.002,2,
+online_boarding,Online Boarding,0.0364,0.0016,3,1.154
+customer_type,Customer Type,0.0253,0.001,4,
+ease_of_online_booking,Online Booking,0.0091,0.0007,5,0.481
+departure_arrival_time_convenient,Departure/Arrival Time,0.0058,0.0003,6,-0.494
+class,Travel Class,0.0054,0.0003,7,
+checkin_service,Check-in Service,0.005,0.0002,8,0.444
+on_board_service,On-board Service,0.0046,0.0003,9,0.439
+leg_room_service,Leg Room,0.0036,0.0003,10,0.405
+gate_location,Gate Location,0.0024,0.0002,11,-0.32
+cleanliness,Cleanliness,0.0021,0.0004,12,0.343
+inflight_service,Inflight Service,0.0009,0.0001,13,0.213
+baggage_handling,Baggage Handling,0.0008,0.0001,14,0.182
+dep_delay,Departure Delay,0.0005,0.0001,15,-0.151
+inflight_entertainment,Inflight Entertainment,0.0003,0.0001,16,0.092
+food_and_drink,Food & Drink,0.0002,0.0001,17,-0.062
+seat_comfort,Seat Comfort,-0.0,0.0,18,0.024

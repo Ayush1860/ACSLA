@@ -1,0 +1,378 @@
+{
+  "config": "{\"version\": \"5.43\", \"themeCollection\": {}, \"activeSectionIndex\": 0, \"defaultDrillFilterOtherVisuals\": true}",
+  "layoutOptimization": 0,
+  "sections": [
+    {
+      "config": "{}",
+      "displayName": "Executive Overview",
+      "displayOption": 1,
+      "filters": "[]",
+      "height": 720.0,
+      "name": "ReportSectioncb0d1ed9c8165d51a112",
+      "ordinal": 0,
+      "visualContainers": [
+        {
+          "x": 20,
+          "y": 20,
+          "z": 0,
+          "width": 660,
+          "height": 56,
+          "config": "{\"name\": \"237fe7ea32525eca809e\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 20, \"y\": 20, \"z\": 0, \"width\": 660, \"height\": 56}}], \"singleVisual\": {\"visualType\": \"textbox\", \"drillFilterOtherVisuals\": true, \"objects\": {\"general\": [{\"properties\": {\"paragraphs\": [{\"textRuns\": [{\"value\": \"Executive Overview\", \"textStyle\": {\"fontSize\": \"20pt\", \"fontWeight\": \"bold\"}}]}]}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 700,
+          "y": 20,
+          "z": 1000,
+          "width": 180,
+          "height": 56,
+          "config": "{\"name\": \"93f137a3bb395413901e\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 700, \"y\": 20, \"z\": 1000, \"width\": 180, \"height\": 56}}], \"singleVisual\": {\"visualType\": \"slicer\", \"drillFilterOtherVisuals\": true, \"projections\": {\"Values\": [{\"queryRef\": \"Dim_Travel.class\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"t0\", \"Entity\": \"Dim_Travel\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"t0\"}}, \"Property\": \"class\"}, \"Name\": \"Dim_Travel.class\", \"NativeReferenceName\": \"class\"}]}, \"objects\": {\"data\": [{\"properties\": {\"mode\": {\"expr\": {\"Literal\": {\"Value\": \"'Dropdown'\"}}}}}]}, \"vcObjects\": {\"title\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Class'\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 890,
+          "y": 20,
+          "z": 2000,
+          "width": 180,
+          "height": 56,
+          "config": "{\"name\": \"53129bdea79457308839\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 890, \"y\": 20, \"z\": 2000, \"width\": 180, \"height\": 56}}], \"singleVisual\": {\"visualType\": \"slicer\", \"drillFilterOtherVisuals\": true, \"projections\": {\"Values\": [{\"queryRef\": \"Dim_Travel.travel_type\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"t0\", \"Entity\": \"Dim_Travel\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"t0\"}}, \"Property\": \"travel_type\"}, \"Name\": \"Dim_Travel.travel_type\", \"NativeReferenceName\": \"travel_type\"}]}, \"objects\": {\"data\": [{\"properties\": {\"mode\": {\"expr\": {\"Literal\": {\"Value\": \"'Dropdown'\"}}}}}]}, \"vcObjects\": {\"title\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Travel type'\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 1080,
+          "y": 20,
+          "z": 3000,
+          "width": 180,
+          "height": 56,
+          "config": "{\"name\": \"8918106af39059329ed8\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 1080, \"y\": 20, \"z\": 3000, \"width\": 180, \"height\": 56}}], \"singleVisual\": {\"visualType\": \"slicer\", \"drillFilterOtherVisuals\": true, \"projections\": {\"Values\": [{\"queryRef\": \"Dim_Customer.customer_type\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"t0\", \"Entity\": \"Dim_Customer\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"t0\"}}, \"Property\": \"customer_type\"}, \"Name\": \"Dim_Customer.customer_type\", \"NativeReferenceName\": \"customer_type\"}]}, \"objects\": {\"data\": [{\"properties\": {\"mode\": {\"expr\": {\"Literal\": {\"Value\": \"'Dropdown'\"}}}}}]}, \"vcObjects\": {\"title\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Customer type'\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 20,
+          "y": 96,
+          "z": 4000,
+          "width": 300,
+          "height": 110,
+          "config": "{\"name\": \"01a9a6f66bc55f3483b4\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 20, \"y\": 96, \"z\": 4000, \"width\": 300, \"height\": 110}}], \"singleVisual\": {\"visualType\": \"card\", \"drillFilterOtherVisuals\": true, \"projections\": {\"Values\": [{\"queryRef\": \"Fact_Flights.Total Passengers\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"t0\", \"Entity\": \"Fact_Flights\", \"Type\": 0}], \"Select\": [{\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"t0\"}}, \"Property\": \"Total Passengers\"}, \"Name\": \"Fact_Flights.Total Passengers\", \"NativeReferenceName\": \"Total Passengers\"}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 340,
+          "y": 96,
+          "z": 5000,
+          "width": 300,
+          "height": 110,
+          "config": "{\"name\": \"7a5a9745a0055ba39d6b\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 340, \"y\": 96, \"z\": 5000, \"width\": 300, \"height\": 110}}], \"singleVisual\": {\"visualType\": \"card\", \"drillFilterOtherVisuals\": true, \"projections\": {\"Values\": [{\"queryRef\": \"Fact_Flights.Satisfaction %\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"t0\", \"Entity\": \"Fact_Flights\", \"Type\": 0}], \"Select\": [{\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"t0\"}}, \"Property\": \"Satisfaction %\"}, \"Name\": \"Fact_Flights.Satisfaction %\", \"NativeReferenceName\": \"Satisfaction %\"}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 660,
+          "y": 96,
+          "z": 6000,
+          "width": 300,
+          "height": 110,
+          "config": "{\"name\": \"fb4b735fcbf15c9cbf14\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 660, \"y\": 96, \"z\": 6000, \"width\": 300, \"height\": 110}}], \"singleVisual\": {\"visualType\": \"card\", \"drillFilterOtherVisuals\": true, \"projections\": {\"Values\": [{\"queryRef\": \"Fact_Flights.Delayed %\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"t0\", \"Entity\": \"Fact_Flights\", \"Type\": 0}], \"Select\": [{\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"t0\"}}, \"Property\": \"Delayed %\"}, \"Name\": \"Fact_Flights.Delayed %\", \"NativeReferenceName\": \"Delayed %\"}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 980,
+          "y": 96,
+          "z": 7000,
+          "width": 280,
+          "height": 110,
+          "config": "{\"name\": \"fae0b4f9e6c8561eabaa\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 980, \"y\": 96, \"z\": 7000, \"width\": 280, \"height\": 110}}], \"singleVisual\": {\"visualType\": \"card\", \"drillFilterOtherVisuals\": true, \"projections\": {\"Values\": [{\"queryRef\": \"Fact_Flights.Avg Dep Delay\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"t0\", \"Entity\": \"Fact_Flights\", \"Type\": 0}], \"Select\": [{\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"t0\"}}, \"Property\": \"Avg Dep Delay\"}, \"Name\": \"Fact_Flights.Avg Dep Delay\", \"NativeReferenceName\": \"Avg Dep Delay\"}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 20,
+          "y": 226,
+          "z": 8000,
+          "width": 610,
+          "height": 474,
+          "config": "{\"name\": \"e69a0a051c8454598865\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 20, \"y\": 226, \"z\": 8000, \"width\": 610, \"height\": 474}}], \"singleVisual\": {\"visualType\": \"clusteredBarChart\", \"drillFilterOtherVisuals\": true, \"projections\": {\"Category\": [{\"queryRef\": \"Dim_Travel.class\"}], \"Y\": [{\"queryRef\": \"Fact_Flights.Satisfaction %\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"t0\", \"Entity\": \"Dim_Travel\", \"Type\": 0}, {\"Name\": \"t1\", \"Entity\": \"Fact_Flights\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"t0\"}}, \"Property\": \"class\"}, \"Name\": \"Dim_Travel.class\", \"NativeReferenceName\": \"class\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"t1\"}}, \"Property\": \"Satisfaction %\"}, \"Name\": \"Fact_Flights.Satisfaction %\", \"NativeReferenceName\": \"Satisfaction %\"}]}, \"vcObjects\": {\"title\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Satisfaction % by class'\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 650,
+          "y": 226,
+          "z": 9000,
+          "width": 610,
+          "height": 474,
+          "config": "{\"name\": \"b3d072dd899e5cf590b4\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 650, \"y\": 226, \"z\": 9000, \"width\": 610, \"height\": 474}}], \"singleVisual\": {\"visualType\": \"clusteredColumnChart\", \"drillFilterOtherVisuals\": true, \"projections\": {\"Category\": [{\"queryRef\": \"Dim_Travel.travel_type\"}], \"Series\": [{\"queryRef\": \"Dim_Travel.class\"}], \"Y\": [{\"queryRef\": \"Fact_Flights.Satisfaction %\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"t0\", \"Entity\": \"Dim_Travel\", \"Type\": 0}, {\"Name\": \"t1\", \"Entity\": \"Fact_Flights\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"t0\"}}, \"Property\": \"travel_type\"}, \"Name\": \"Dim_Travel.travel_type\", \"NativeReferenceName\": \"travel_type\"}, {\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"t0\"}}, \"Property\": \"class\"}, \"Name\": \"Dim_Travel.class\", \"NativeReferenceName\": \"class\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"t1\"}}, \"Property\": \"Satisfaction %\"}, \"Name\": \"Fact_Flights.Satisfaction %\", \"NativeReferenceName\": \"Satisfaction %\"}]}, \"vcObjects\": {\"title\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Satisfaction % by travel type and class'\"}}}}}]}}}",
+          "filters": "[]"
+        }
+      ],
+      "width": 1280.0
+    },
+    {
+      "config": "{}",
+      "displayName": "Customer Segments",
+      "displayOption": 1,
+      "filters": "[]",
+      "height": 720.0,
+      "name": "ReportSectiona28e721b65345175960d",
+      "ordinal": 1,
+      "visualContainers": [
+        {
+          "x": 20,
+          "y": 20,
+          "z": 0,
+          "width": 660,
+          "height": 56,
+          "config": "{\"name\": \"7d0278e861795771943c\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 20, \"y\": 20, \"z\": 0, \"width\": 660, \"height\": 56}}], \"singleVisual\": {\"visualType\": \"textbox\", \"drillFilterOtherVisuals\": true, \"objects\": {\"general\": [{\"properties\": {\"paragraphs\": [{\"textRuns\": [{\"value\": \"Customer Segments - who is at risk?\", \"textStyle\": {\"fontSize\": \"20pt\", \"fontWeight\": \"bold\"}}]}]}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 700,
+          "y": 20,
+          "z": 1000,
+          "width": 180,
+          "height": 56,
+          "config": "{\"name\": \"fbcd3020a96b53b7bb3d\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 700, \"y\": 20, \"z\": 1000, \"width\": 180, \"height\": 56}}], \"singleVisual\": {\"visualType\": \"slicer\", \"drillFilterOtherVisuals\": true, \"projections\": {\"Values\": [{\"queryRef\": \"Dim_Travel.class\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"t0\", \"Entity\": \"Dim_Travel\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"t0\"}}, \"Property\": \"class\"}, \"Name\": \"Dim_Travel.class\", \"NativeReferenceName\": \"class\"}]}, \"objects\": {\"data\": [{\"properties\": {\"mode\": {\"expr\": {\"Literal\": {\"Value\": \"'Dropdown'\"}}}}}]}, \"vcObjects\": {\"title\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Class'\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 890,
+          "y": 20,
+          "z": 2000,
+          "width": 180,
+          "height": 56,
+          "config": "{\"name\": \"4cb38b49c53d5750937f\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 890, \"y\": 20, \"z\": 2000, \"width\": 180, \"height\": 56}}], \"singleVisual\": {\"visualType\": \"slicer\", \"drillFilterOtherVisuals\": true, \"projections\": {\"Values\": [{\"queryRef\": \"Dim_Travel.travel_type\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"t0\", \"Entity\": \"Dim_Travel\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"t0\"}}, \"Property\": \"travel_type\"}, \"Name\": \"Dim_Travel.travel_type\", \"NativeReferenceName\": \"travel_type\"}]}, \"objects\": {\"data\": [{\"properties\": {\"mode\": {\"expr\": {\"Literal\": {\"Value\": \"'Dropdown'\"}}}}}]}, \"vcObjects\": {\"title\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Travel type'\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 1080,
+          "y": 20,
+          "z": 3000,
+          "width": 180,
+          "height": 56,
+          "config": "{\"name\": \"dd44390cbc915ccb982c\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 1080, \"y\": 20, \"z\": 3000, \"width\": 180, \"height\": 56}}], \"singleVisual\": {\"visualType\": \"slicer\", \"drillFilterOtherVisuals\": true, \"projections\": {\"Values\": [{\"queryRef\": \"Dim_Customer.customer_type\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"t0\", \"Entity\": \"Dim_Customer\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"t0\"}}, \"Property\": \"customer_type\"}, \"Name\": \"Dim_Customer.customer_type\", \"NativeReferenceName\": \"customer_type\"}]}, \"objects\": {\"data\": [{\"properties\": {\"mode\": {\"expr\": {\"Literal\": {\"Value\": \"'Dropdown'\"}}}}}]}, \"vcObjects\": {\"title\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Customer type'\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 20,
+          "y": 96,
+          "z": 4000,
+          "width": 610,
+          "height": 300,
+          "config": "{\"name\": \"b70238ff134f5ea9b210\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 20, \"y\": 96, \"z\": 4000, \"width\": 610, \"height\": 300}}], \"singleVisual\": {\"visualType\": \"pivotTable\", \"drillFilterOtherVisuals\": true, \"projections\": {\"Rows\": [{\"queryRef\": \"Dim_Customer.age_band\"}], \"Columns\": [{\"queryRef\": \"Dim_Customer.customer_type\"}], \"Values\": [{\"queryRef\": \"Fact_Flights.Satisfaction %\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"t0\", \"Entity\": \"Dim_Customer\", \"Type\": 0}, {\"Name\": \"t1\", \"Entity\": \"Fact_Flights\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"t0\"}}, \"Property\": \"age_band\"}, \"Name\": \"Dim_Customer.age_band\", \"NativeReferenceName\": \"age_band\"}, {\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"t0\"}}, \"Property\": \"customer_type\"}, \"Name\": \"Dim_Customer.customer_type\", \"NativeReferenceName\": \"customer_type\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"t1\"}}, \"Property\": \"Satisfaction %\"}, \"Name\": \"Fact_Flights.Satisfaction %\", \"NativeReferenceName\": \"Satisfaction %\"}]}, \"vcObjects\": {\"title\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Satisfaction % - age band x customer type'\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 650,
+          "y": 96,
+          "z": 5000,
+          "width": 610,
+          "height": 300,
+          "config": "{\"name\": \"9484d702f78f504a9d3b\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 650, \"y\": 96, \"z\": 5000, \"width\": 610, \"height\": 300}}], \"singleVisual\": {\"visualType\": \"donutChart\", \"drillFilterOtherVisuals\": true, \"projections\": {\"Category\": [{\"queryRef\": \"Dim_Customer.gender\"}], \"Y\": [{\"queryRef\": \"Fact_Flights.Total Passengers\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"t0\", \"Entity\": \"Dim_Customer\", \"Type\": 0}, {\"Name\": \"t1\", \"Entity\": \"Fact_Flights\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"t0\"}}, \"Property\": \"gender\"}, \"Name\": \"Dim_Customer.gender\", \"NativeReferenceName\": \"gender\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"t1\"}}, \"Property\": \"Total Passengers\"}, \"Name\": \"Fact_Flights.Total Passengers\", \"NativeReferenceName\": \"Total Passengers\"}]}, \"vcObjects\": {\"title\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Passengers by gender'\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 20,
+          "y": 416,
+          "z": 6000,
+          "width": 610,
+          "height": 284,
+          "config": "{\"name\": \"ae79bbbf587756459fa9\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 20, \"y\": 416, \"z\": 6000, \"width\": 610, \"height\": 284}}], \"singleVisual\": {\"visualType\": \"clusteredBarChart\", \"drillFilterOtherVisuals\": true, \"projections\": {\"Category\": [{\"queryRef\": \"Dim_Travel.distance_band\"}], \"Y\": [{\"queryRef\": \"Fact_Flights.Satisfaction %\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"t0\", \"Entity\": \"Dim_Travel\", \"Type\": 0}, {\"Name\": \"t1\", \"Entity\": \"Fact_Flights\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"t0\"}}, \"Property\": \"distance_band\"}, \"Name\": \"Dim_Travel.distance_band\", \"NativeReferenceName\": \"distance_band\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"t1\"}}, \"Property\": \"Satisfaction %\"}, \"Name\": \"Fact_Flights.Satisfaction %\", \"NativeReferenceName\": \"Satisfaction %\"}]}, \"vcObjects\": {\"title\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Satisfaction % by distance band'\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 650,
+          "y": 416,
+          "z": 7000,
+          "width": 610,
+          "height": 284,
+          "config": "{\"name\": \"b55059d5a7aa5f69a0e5\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 650, \"y\": 416, \"z\": 7000, \"width\": 610, \"height\": 284}}], \"singleVisual\": {\"visualType\": \"clusteredBarChart\", \"drillFilterOtherVisuals\": true, \"projections\": {\"Category\": [{\"queryRef\": \"Dim_Travel.trip_segment\"}], \"Y\": [{\"queryRef\": \"Fact_Flights.Dissatisfied Passengers\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"t0\", \"Entity\": \"Dim_Travel\", \"Type\": 0}, {\"Name\": \"t1\", \"Entity\": \"Fact_Flights\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"t0\"}}, \"Property\": \"trip_segment\"}, \"Name\": \"Dim_Travel.trip_segment\", \"NativeReferenceName\": \"trip_segment\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"t1\"}}, \"Property\": \"Dissatisfied Passengers\"}, \"Name\": \"Fact_Flights.Dissatisfied Passengers\", \"NativeReferenceName\": \"Dissatisfied Passengers\"}], \"OrderBy\": [{\"Direction\": 2, \"Expression\": {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"t1\"}}, \"Property\": \"Dissatisfied Passengers\"}}}]}, \"vcObjects\": {\"title\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Dissatisfied passengers by trip segment'\"}}}}}]}}}",
+          "filters": "[]"
+        }
+      ],
+      "width": 1280.0
+    },
+    {
+      "config": "{}",
+      "displayName": "Service Drivers",
+      "displayOption": 1,
+      "filters": "[]",
+      "height": 720.0,
+      "name": "ReportSection6e6b30302a7a53958551",
+      "ordinal": 2,
+      "visualContainers": [
+        {
+          "x": 20,
+          "y": 20,
+          "z": 0,
+          "width": 660,
+          "height": 56,
+          "config": "{\"name\": \"711d5c8863e057f7bc79\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 20, \"y\": 20, \"z\": 0, \"width\": 660, \"height\": 56}}], \"singleVisual\": {\"visualType\": \"textbox\", \"drillFilterOtherVisuals\": true, \"objects\": {\"general\": [{\"properties\": {\"paragraphs\": [{\"textRuns\": [{\"value\": \"Service Drivers - what to fix first\", \"textStyle\": {\"fontSize\": \"20pt\", \"fontWeight\": \"bold\"}}]}]}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 700,
+          "y": 20,
+          "z": 1000,
+          "width": 180,
+          "height": 56,
+          "config": "{\"name\": \"6dbd6bcd5050531b9f26\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 700, \"y\": 20, \"z\": 1000, \"width\": 180, \"height\": 56}}], \"singleVisual\": {\"visualType\": \"slicer\", \"drillFilterOtherVisuals\": true, \"projections\": {\"Values\": [{\"queryRef\": \"Dim_Travel.class\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"t0\", \"Entity\": \"Dim_Travel\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"t0\"}}, \"Property\": \"class\"}, \"Name\": \"Dim_Travel.class\", \"NativeReferenceName\": \"class\"}]}, \"objects\": {\"data\": [{\"properties\": {\"mode\": {\"expr\": {\"Literal\": {\"Value\": \"'Dropdown'\"}}}}}]}, \"vcObjects\": {\"title\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Class'\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 890,
+          "y": 20,
+          "z": 2000,
+          "width": 180,
+          "height": 56,
+          "config": "{\"name\": \"976237420d8458c38d78\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 890, \"y\": 20, \"z\": 2000, \"width\": 180, \"height\": 56}}], \"singleVisual\": {\"visualType\": \"slicer\", \"drillFilterOtherVisuals\": true, \"projections\": {\"Values\": [{\"queryRef\": \"Dim_Travel.travel_type\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"t0\", \"Entity\": \"Dim_Travel\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"t0\"}}, \"Property\": \"travel_type\"}, \"Name\": \"Dim_Travel.travel_type\", \"NativeReferenceName\": \"travel_type\"}]}, \"objects\": {\"data\": [{\"properties\": {\"mode\": {\"expr\": {\"Literal\": {\"Value\": \"'Dropdown'\"}}}}}]}, \"vcObjects\": {\"title\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Travel type'\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 1080,
+          "y": 20,
+          "z": 3000,
+          "width": 180,
+          "height": 56,
+          "config": "{\"name\": \"be1c5e4ac8cd5d17ad4d\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 1080, \"y\": 20, \"z\": 3000, \"width\": 180, \"height\": 56}}], \"singleVisual\": {\"visualType\": \"slicer\", \"drillFilterOtherVisuals\": true, \"projections\": {\"Values\": [{\"queryRef\": \"Dim_Customer.customer_type\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"t0\", \"Entity\": \"Dim_Customer\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"t0\"}}, \"Property\": \"customer_type\"}, \"Name\": \"Dim_Customer.customer_type\", \"NativeReferenceName\": \"customer_type\"}]}, \"objects\": {\"data\": [{\"properties\": {\"mode\": {\"expr\": {\"Literal\": {\"Value\": \"'Dropdown'\"}}}}}]}, \"vcObjects\": {\"title\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Customer type'\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 20,
+          "y": 96,
+          "z": 4000,
+          "width": 400,
+          "height": 604,
+          "config": "{\"name\": \"01659000720f5a6993fc\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 20, \"y\": 96, \"z\": 4000, \"width\": 400, \"height\": 604}}], \"singleVisual\": {\"visualType\": \"clusteredBarChart\", \"drillFilterOtherVisuals\": true, \"projections\": {\"Category\": [{\"queryRef\": \"Dim_Service.service_name\"}], \"Y\": [{\"queryRef\": \"Fact_Service_Ratings.Service Gap\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"t0\", \"Entity\": \"Dim_Service\", \"Type\": 0}, {\"Name\": \"t1\", \"Entity\": \"Fact_Service_Ratings\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"t0\"}}, \"Property\": \"service_name\"}, \"Name\": \"Dim_Service.service_name\", \"NativeReferenceName\": \"service_name\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"t1\"}}, \"Property\": \"Service Gap\"}, \"Name\": \"Fact_Service_Ratings.Service Gap\", \"NativeReferenceName\": \"Service Gap\"}], \"OrderBy\": [{\"Direction\": 2, \"Expression\": {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"t1\"}}, \"Property\": \"Service Gap\"}}}]}, \"vcObjects\": {\"title\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Service Gap (5 - avg rating)'\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 440,
+          "y": 96,
+          "z": 5000,
+          "width": 820,
+          "height": 300,
+          "config": "{\"name\": \"ac6242aaac555910bdc7\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 440, \"y\": 96, \"z\": 5000, \"width\": 820, \"height\": 300}}], \"singleVisual\": {\"visualType\": \"pivotTable\", \"drillFilterOtherVisuals\": true, \"projections\": {\"Rows\": [{\"queryRef\": \"Dim_Service.service_name\"}], \"Columns\": [{\"queryRef\": \"Dim_Travel.class\"}], \"Values\": [{\"queryRef\": \"Fact_Service_Ratings.Avg Service Rating\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"t0\", \"Entity\": \"Dim_Service\", \"Type\": 0}, {\"Name\": \"t1\", \"Entity\": \"Dim_Travel\", \"Type\": 0}, {\"Name\": \"t2\", \"Entity\": \"Fact_Service_Ratings\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"t0\"}}, \"Property\": \"service_name\"}, \"Name\": \"Dim_Service.service_name\", \"NativeReferenceName\": \"service_name\"}, {\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"t1\"}}, \"Property\": \"class\"}, \"Name\": \"Dim_Travel.class\", \"NativeReferenceName\": \"class\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"t2\"}}, \"Property\": \"Avg Service Rating\"}, \"Name\": \"Fact_Service_Ratings.Avg Service Rating\", \"NativeReferenceName\": \"Avg Service Rating\"}]}, \"vcObjects\": {\"title\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Avg rating by service and class'\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 440,
+          "y": 416,
+          "z": 6000,
+          "width": 820,
+          "height": 284,
+          "config": "{\"name\": \"15f2dcebad49531b829a\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 440, \"y\": 416, \"z\": 6000, \"width\": 820, \"height\": 284}}], \"singleVisual\": {\"visualType\": \"clusteredBarChart\", \"drillFilterOtherVisuals\": true, \"projections\": {\"Category\": [{\"queryRef\": \"Dim_Service.service_name\"}], \"Y\": [{\"queryRef\": \"Fact_Service_Ratings.Rating Gap (Sat vs Dissat)\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"t0\", \"Entity\": \"Dim_Service\", \"Type\": 0}, {\"Name\": \"t1\", \"Entity\": \"Fact_Service_Ratings\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"t0\"}}, \"Property\": \"service_name\"}, \"Name\": \"Dim_Service.service_name\", \"NativeReferenceName\": \"service_name\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"t1\"}}, \"Property\": \"Rating Gap (Sat vs Dissat)\"}, \"Name\": \"Fact_Service_Ratings.Rating Gap (Sat vs Dissat)\", \"NativeReferenceName\": \"Rating Gap (Sat vs Dissat)\"}], \"OrderBy\": [{\"Direction\": 2, \"Expression\": {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"t1\"}}, \"Property\": \"Rating Gap (Sat vs Dissat)\"}}}]}, \"vcObjects\": {\"title\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Rating gap: satisfied vs dissatisfied passengers'\"}}}}}]}}}",
+          "filters": "[]"
+        }
+      ],
+      "width": 1280.0
+    },
+    {
+      "config": "{}",
+      "displayName": "Delay Impact",
+      "displayOption": 1,
+      "filters": "[]",
+      "height": 720.0,
+      "name": "ReportSectiond278c6cce67e5f9db8bb",
+      "ordinal": 3,
+      "visualContainers": [
+        {
+          "x": 20,
+          "y": 20,
+          "z": 0,
+          "width": 660,
+          "height": 56,
+          "config": "{\"name\": \"e9b8b15fa7425cf2afa8\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 20, \"y\": 20, \"z\": 0, \"width\": 660, \"height\": 56}}], \"singleVisual\": {\"visualType\": \"textbox\", \"drillFilterOtherVisuals\": true, \"objects\": {\"general\": [{\"properties\": {\"paragraphs\": [{\"textRuns\": [{\"value\": \"Delay Impact - the cost of late departures\", \"textStyle\": {\"fontSize\": \"20pt\", \"fontWeight\": \"bold\"}}]}]}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 700,
+          "y": 20,
+          "z": 1000,
+          "width": 180,
+          "height": 56,
+          "config": "{\"name\": \"45e98142c6d555ba84fb\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 700, \"y\": 20, \"z\": 1000, \"width\": 180, \"height\": 56}}], \"singleVisual\": {\"visualType\": \"slicer\", \"drillFilterOtherVisuals\": true, \"projections\": {\"Values\": [{\"queryRef\": \"Dim_Travel.class\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"t0\", \"Entity\": \"Dim_Travel\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"t0\"}}, \"Property\": \"class\"}, \"Name\": \"Dim_Travel.class\", \"NativeReferenceName\": \"class\"}]}, \"objects\": {\"data\": [{\"properties\": {\"mode\": {\"expr\": {\"Literal\": {\"Value\": \"'Dropdown'\"}}}}}]}, \"vcObjects\": {\"title\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Class'\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 890,
+          "y": 20,
+          "z": 2000,
+          "width": 180,
+          "height": 56,
+          "config": "{\"name\": \"874610a6cee85614b903\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 890, \"y\": 20, \"z\": 2000, \"width\": 180, \"height\": 56}}], \"singleVisual\": {\"visualType\": \"slicer\", \"drillFilterOtherVisuals\": true, \"projections\": {\"Values\": [{\"queryRef\": \"Dim_Travel.travel_type\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"t0\", \"Entity\": \"Dim_Travel\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"t0\"}}, \"Property\": \"travel_type\"}, \"Name\": \"Dim_Travel.travel_type\", \"NativeReferenceName\": \"travel_type\"}]}, \"objects\": {\"data\": [{\"properties\": {\"mode\": {\"expr\": {\"Literal\": {\"Value\": \"'Dropdown'\"}}}}}]}, \"vcObjects\": {\"title\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Travel type'\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 1080,
+          "y": 20,
+          "z": 3000,
+          "width": 180,
+          "height": 56,
+          "config": "{\"name\": \"87f134feb0f65d4a82ea\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 1080, \"y\": 20, \"z\": 3000, \"width\": 180, \"height\": 56}}], \"singleVisual\": {\"visualType\": \"slicer\", \"drillFilterOtherVisuals\": true, \"projections\": {\"Values\": [{\"queryRef\": \"Dim_Customer.customer_type\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"t0\", \"Entity\": \"Dim_Customer\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"t0\"}}, \"Property\": \"customer_type\"}, \"Name\": \"Dim_Customer.customer_type\", \"NativeReferenceName\": \"customer_type\"}]}, \"objects\": {\"data\": [{\"properties\": {\"mode\": {\"expr\": {\"Literal\": {\"Value\": \"'Dropdown'\"}}}}}]}, \"vcObjects\": {\"title\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Customer type'\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 20,
+          "y": 96,
+          "z": 4000,
+          "width": 240,
+          "height": 110,
+          "config": "{\"name\": \"6d2526c1a97459bca87b\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 20, \"y\": 96, \"z\": 4000, \"width\": 240, \"height\": 110}}], \"singleVisual\": {\"visualType\": \"card\", \"drillFilterOtherVisuals\": true, \"projections\": {\"Values\": [{\"queryRef\": \"Fact_Flights.Delayed %\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"t0\", \"Entity\": \"Fact_Flights\", \"Type\": 0}], \"Select\": [{\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"t0\"}}, \"Property\": \"Delayed %\"}, \"Name\": \"Fact_Flights.Delayed %\", \"NativeReferenceName\": \"Delayed %\"}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 280,
+          "y": 96,
+          "z": 5000,
+          "width": 240,
+          "height": 110,
+          "config": "{\"name\": \"2ca22a17fc7c5a8c90d9\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 280, \"y\": 96, \"z\": 5000, \"width\": 240, \"height\": 110}}], \"singleVisual\": {\"visualType\": \"card\", \"drillFilterOtherVisuals\": true, \"projections\": {\"Values\": [{\"queryRef\": \"Fact_Flights.Delay Penalty >15 pts\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"t0\", \"Entity\": \"Fact_Flights\", \"Type\": 0}], \"Select\": [{\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"t0\"}}, \"Property\": \"Delay Penalty >15 pts\"}, \"Name\": \"Fact_Flights.Delay Penalty >15 pts\", \"NativeReferenceName\": \"Delay Penalty >15 pts\"}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 540,
+          "y": 96,
+          "z": 6000,
+          "width": 240,
+          "height": 110,
+          "config": "{\"name\": \"440b4520fcd654b980f1\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 540, \"y\": 96, \"z\": 6000, \"width\": 240, \"height\": 110}}], \"singleVisual\": {\"visualType\": \"slicer\", \"drillFilterOtherVisuals\": true, \"projections\": {\"Values\": [{\"queryRef\": \"Delay Reduction.Delay Reduction %\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"t0\", \"Entity\": \"Delay Reduction\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"t0\"}}, \"Property\": \"Delay Reduction %\"}, \"Name\": \"Delay Reduction.Delay Reduction %\", \"NativeReferenceName\": \"Delay Reduction %\"}]}, \"objects\": {\"data\": [{\"properties\": {\"mode\": {\"expr\": {\"Literal\": {\"Value\": \"'Dropdown'\"}}}}}]}, \"vcObjects\": {\"title\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'What-if: delays removed (%)'\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 800,
+          "y": 96,
+          "z": 7000,
+          "width": 220,
+          "height": 110,
+          "config": "{\"name\": \"852f1509212858308518\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 800, \"y\": 96, \"z\": 7000, \"width\": 220, \"height\": 110}}], \"singleVisual\": {\"visualType\": \"card\", \"drillFilterOtherVisuals\": true, \"projections\": {\"Values\": [{\"queryRef\": \"Fact_Flights.Projected Satisfaction %\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"t0\", \"Entity\": \"Fact_Flights\", \"Type\": 0}], \"Select\": [{\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"t0\"}}, \"Property\": \"Projected Satisfaction %\"}, \"Name\": \"Fact_Flights.Projected Satisfaction %\", \"NativeReferenceName\": \"Projected Satisfaction %\"}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 1040,
+          "y": 96,
+          "z": 8000,
+          "width": 220,
+          "height": 110,
+          "config": "{\"name\": \"11f1a73c2ed25be98abe\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 1040, \"y\": 96, \"z\": 8000, \"width\": 220, \"height\": 110}}], \"singleVisual\": {\"visualType\": \"card\", \"drillFilterOtherVisuals\": true, \"projections\": {\"Values\": [{\"queryRef\": \"Fact_Flights.Projected Gain pts\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"t0\", \"Entity\": \"Fact_Flights\", \"Type\": 0}], \"Select\": [{\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"t0\"}}, \"Property\": \"Projected Gain pts\"}, \"Name\": \"Fact_Flights.Projected Gain pts\", \"NativeReferenceName\": \"Projected Gain pts\"}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 20,
+          "y": 226,
+          "z": 9000,
+          "width": 610,
+          "height": 474,
+          "config": "{\"name\": \"e30b47264b5d5b14bea0\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 20, \"y\": 226, \"z\": 9000, \"width\": 610, \"height\": 474}}], \"singleVisual\": {\"visualType\": \"clusteredColumnChart\", \"drillFilterOtherVisuals\": true, \"projections\": {\"Category\": [{\"queryRef\": \"Fact_Flights.delay_bucket\"}], \"Y\": [{\"queryRef\": \"Fact_Flights.Satisfaction %\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"t0\", \"Entity\": \"Fact_Flights\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"t0\"}}, \"Property\": \"delay_bucket\"}, \"Name\": \"Fact_Flights.delay_bucket\", \"NativeReferenceName\": \"delay_bucket\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"t0\"}}, \"Property\": \"Satisfaction %\"}, \"Name\": \"Fact_Flights.Satisfaction %\", \"NativeReferenceName\": \"Satisfaction %\"}]}, \"vcObjects\": {\"title\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Satisfaction % by departure delay'\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 650,
+          "y": 226,
+          "z": 10000,
+          "width": 610,
+          "height": 474,
+          "config": "{\"name\": \"e1524a2118075e448d0c\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 650, \"y\": 226, \"z\": 10000, \"width\": 610, \"height\": 474}}], \"singleVisual\": {\"visualType\": \"scatterChart\", \"drillFilterOtherVisuals\": true, \"projections\": {\"Category\": [{\"queryRef\": \"Dim_Travel.trip_segment\"}], \"X\": [{\"queryRef\": \"Fact_Flights.Avg Dep Delay\"}], \"Y\": [{\"queryRef\": \"Fact_Flights.Satisfaction %\"}], \"Size\": [{\"queryRef\": \"Fact_Flights.Total Passengers\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"t0\", \"Entity\": \"Dim_Travel\", \"Type\": 0}, {\"Name\": \"t1\", \"Entity\": \"Fact_Flights\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"t0\"}}, \"Property\": \"trip_segment\"}, \"Name\": \"Dim_Travel.trip_segment\", \"NativeReferenceName\": \"trip_segment\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"t1\"}}, \"Property\": \"Avg Dep Delay\"}, \"Name\": \"Fact_Flights.Avg Dep Delay\", \"NativeReferenceName\": \"Avg Dep Delay\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"t1\"}}, \"Property\": \"Satisfaction %\"}, \"Name\": \"Fact_Flights.Satisfaction %\", \"NativeReferenceName\": \"Satisfaction %\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"t1\"}}, \"Property\": \"Total Passengers\"}, \"Name\": \"Fact_Flights.Total Passengers\", \"NativeReferenceName\": \"Total Passengers\"}]}, \"vcObjects\": {\"title\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Avg delay vs satisfaction by trip segment'\"}}}}}]}}}",
+          "filters": "[]"
+        }
+      ],
+      "width": 1280.0
+    }
+  ]
+}

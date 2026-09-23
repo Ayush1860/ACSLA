@@ -1,0 +1,266 @@
+table Fact_Flights
+	lineageTag: 258502c4-0614-57dc-a735-3cabbcdba0da
+
+	/// Number of passengers (one row per passenger in Fact_Flights).
+	measure 'Total Passengers' = COUNTROWS(Fact_Flights)
+		formatString: #,0
+		displayFolder: 1 Core
+		lineageTag: e6d0831b-e45d-5d1c-8e3c-0ba95f94c32e
+
+	/// Passengers who rated the airline 'satisfied'.
+	measure 'Satisfied Passengers' = CALCULATE([Total Passengers], Fact_Flights[is_satisfied] = 1)
+		formatString: #,0
+		displayFolder: 1 Core
+		lineageTag: 5a3522e7-d89e-5ed0-b3fd-b326d0ff379b
+
+	/// Passengers who were neutral or dissatisfied.
+	measure 'Dissatisfied Passengers' = [Total Passengers] - [Satisfied Passengers]
+		formatString: #,0
+		displayFolder: 1 Core
+		lineageTag: 059a4e6e-be0b-5e7a-9c65-4f42706e84e5
+
+	/// Share of passengers who are satisfied.
+	measure 'Satisfaction %' = DIVIDE([Satisfied Passengers], [Total Passengers])
+		formatString: 0.0%
+		displayFolder: 1 Core
+		lineageTag: 85c6eb94-b08c-5739-94e1-3ee32360a6e7
+
+	/// Percentage-point difference between the current selection and all passengers.
+	measure 'Satisfaction vs Overall pts' = ([Satisfaction %] - CALCULATE([Satisfaction %], REMOVEFILTERS())) * 100
+		formatString: +0.0" pts";-0.0" pts";0.0" pts"
+		displayFolder: 1 Core
+		lineageTag: 553fc635-8360-51fe-97d4-7c263d8c3c79
+
+	/// Average departure delay in minutes.
+	measure 'Avg Dep Delay' = AVERAGE(Fact_Flights[dep_delay])
+		formatString: 0.0
+		displayFolder: 2 Delay
+		lineageTag: edab7678-2b52-59ea-ad40-5973e03ae50b
+
+	/// Share of passengers whose departure was more than 15 minutes late.
+	measure 'Delayed %' =
+			DIVIDE(
+			    CALCULATE([Total Passengers], Fact_Flights[dep_delay] > 15),
+			    [Total Passengers]
+			)
+		formatString: 0.0%
+		displayFolder: 2 Delay
+		lineageTag: e7ee7640-617c-5d15-ad35-a010d2ae662f
+
+	/// Satisfaction % for flights that departed on time (0 min delay).
+	measure 'Satisfaction % (On Time)' = CALCULATE([Satisfaction %], Fact_Flights[dep_delay] = 0)
+		formatString: 0.0%
+		displayFolder: 2 Delay
+		lineageTag: ee8514cf-0c8b-5a4f-a9be-27ecea387a70
+
+	/// Satisfaction % for departures more than 15 minutes late.
+	measure 'Satisfaction % (Delayed >15)' = CALCULATE([Satisfaction %], Fact_Flights[dep_delay] > 15)
+		formatString: 0.0%
+		displayFolder: 2 Delay
+		lineageTag: 6616c36b-d3c7-5bfb-96d1-b2f95c2c4fe8
+
+	/// Satisfaction % for departures more than 60 minutes late.
+	measure 'Satisfaction % (Delayed >60)' = CALCULATE([Satisfaction %], Fact_Flights[dep_delay] > 60)
+		formatString: 0.0%
+		displayFolder: 2 Delay
+		lineageTag: 16809c82-397a-5683-a0ac-9e266b1568d3
+
+	/// Points of satisfaction lost versus an all-on-time baseline.
+	measure 'Delay Impact pts' = ([Satisfaction % (On Time)] - [Satisfaction %]) * 100
+		formatString: +0.0" pts";-0.0" pts";0.0" pts"
+		displayFolder: 2 Delay
+		lineageTag: 03dc77a8-2bfd-506f-94e7-78eeb2f3d863
+
+	/// Satisfaction gap between on-time and >15 min delayed passengers.
+	measure 'Delay Penalty >15 pts' = ([Satisfaction % (On Time)] - [Satisfaction % (Delayed >15)]) * 100
+		formatString: +0.0" pts";-0.0" pts";0.0" pts"
+		displayFolder: 2 Delay
+		lineageTag: bca2c0ec-6fea-591f-965d-9e2d946f8649
+
+	/// Satisfaction % if the selected share of >15 min delays were eliminated.
+	measure 'Projected Satisfaction %' =
+			VAR r = [Delay Reduction Value] / 100
+			VAR OnTimeRate = CALCULATE([Satisfaction %], Fact_Flights[dep_delay] <= 15)
+			VAR DelayedPax = CALCULATE([Total Passengers], Fact_Flights[dep_delay] > 15)
+			VAR DelayedSat = CALCULATE([Satisfied Passengers], Fact_Flights[dep_delay] > 15)
+			-- a share r of delayed passengers becomes on time and behaves like on-time passengers
+			VAR Recovered = r * (DelayedPax * OnTimeRate - DelayedSat)
+			RETURN
+			    DIVIDE([Satisfied Passengers] + Recovered, [Total Passengers])
+		formatString: 0.0%
+		displayFolder: 3 What-if
+		lineageTag: 90e5d384-5300-5a61-93bf-69fb0f67fbe8
+
+	/// Satisfaction points gained under the what-if delay reduction.
+	measure 'Projected Gain pts' = ([Projected Satisfaction %] - [Satisfaction %]) * 100
+		formatString: +0.0" pts";-0.0" pts";0.0" pts"
+		displayFolder: 3 What-if
+		lineageTag: b8cd259c-bb72-5152-ba4a-1f19851b2726
+
+	/// Satisfaction % of loyal customers.
+	measure 'Loyal Satisfaction %' = CALCULATE([Satisfaction %], Dim_Customer[customer_type] = "Loyal Customer")
+		formatString: 0.0%
+		displayFolder: 4 Loyalty
+		lineageTag: cf9ba2c9-368e-52e6-820f-6805223dfabe
+
+	/// Satisfaction % of disloyal customers.
+	measure 'Disloyal Satisfaction %' = CALCULATE([Satisfaction %], Dim_Customer[customer_type] = "Disloyal Customer")
+		formatString: 0.0%
+		displayFolder: 4 Loyalty
+		lineageTag: 8594380f-4fd4-5d13-9727-a5f4bd53eb73
+
+	/// Satisfaction gap between loyal and disloyal customers.
+	measure 'Loyalty Gap pts' = ([Loyal Satisfaction %] - [Disloyal Satisfaction %]) * 100
+		formatString: +0.0" pts";-0.0" pts";0.0" pts"
+		displayFolder: 4 Loyalty
+		lineageTag: 111240f2-b9fd-5e7a-9db6-afe0a1c80d41
+
+	column passenger_id
+		dataType: int64
+		formatString: 0
+		isHidden
+		lineageTag: 34382a7d-f22d-54bf-9617-bf7e7f985bac
+		summarizeBy: none
+		sourceColumn: passenger_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column customer_id
+		dataType: int64
+		formatString: 0
+		isHidden
+		lineageTag: 32a7b86f-1f18-58dd-9d19-0d301ba4081e
+		summarizeBy: none
+		sourceColumn: customer_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column travel_id
+		dataType: int64
+		formatString: 0
+		isHidden
+		lineageTag: aaf5caf3-59fa-5a8c-a95b-0ab9e42039ae
+		summarizeBy: none
+		sourceColumn: travel_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column age
+		dataType: int64
+		formatString: 0
+		lineageTag: 754b8271-82e1-5871-879b-f96143a5a802
+		summarizeBy: none
+		sourceColumn: age
+
+		annotation SummarizationSetBy = Automatic
+
+	column flight_distance
+		dataType: int64
+		formatString: #,0
+		lineageTag: 1a47d5be-d9e4-5750-b773-ddce84ebcc37
+		summarizeBy: none
+		sourceColumn: flight_distance
+
+		annotation SummarizationSetBy = Automatic
+
+	column dep_delay
+		dataType: int64
+		formatString: #,0
+		lineageTag: 1712de7d-d2c4-582c-9218-19bcf30a41e4
+		summarizeBy: none
+		sourceColumn: dep_delay
+
+		annotation SummarizationSetBy = Automatic
+
+	column arr_delay
+		dataType: int64
+		formatString: #,0
+		lineageTag: c9aa2ffa-2b27-5796-a38c-1892bb979129
+		summarizeBy: none
+		sourceColumn: arr_delay
+
+		annotation SummarizationSetBy = Automatic
+
+	column delay_bucket
+		dataType: string
+		lineageTag: 948e270f-fb98-5896-b6aa-661a5bd955f8
+		summarizeBy: none
+		sourceColumn: delay_bucket
+		sortByColumn: delay_bucket_order
+
+		annotation SummarizationSetBy = Automatic
+
+	column delay_bucket_order
+		dataType: int64
+		formatString: 0
+		isHidden
+		lineageTag: eedce000-9d8a-586f-b7c0-37de8db62de8
+		summarizeBy: none
+		sourceColumn: delay_bucket_order
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_delayed_15
+		dataType: int64
+		formatString: 0
+		lineageTag: fdc1ff65-338e-5352-9a52-f8a029489292
+		summarizeBy: sum
+		sourceColumn: is_delayed_15
+
+		annotation SummarizationSetBy = Automatic
+
+	column avg_service_rating
+		dataType: double
+		formatString: 0.00
+		lineageTag: 6f6b0dc0-9c5d-5cf6-8764-cc4e57cb23b9
+		summarizeBy: none
+		sourceColumn: avg_service_rating
+
+		annotation SummarizationSetBy = Automatic
+
+	column services_not_applicable
+		dataType: int64
+		formatString: 0
+		lineageTag: 1d8929d7-41f8-5d3e-8ec9-7d006bbd69ab
+		summarizeBy: none
+		sourceColumn: services_not_applicable
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_satisfied
+		dataType: int64
+		formatString: 0
+		lineageTag: 4b96053f-ed55-51ae-9f61-4caff8626167
+		summarizeBy: sum
+		sourceColumn: is_satisfied
+
+		annotation SummarizationSetBy = Automatic
+
+	column satisfaction
+		dataType: string
+		lineageTag: 27a442fe-269b-5974-ae44-e10220dc00f1
+		summarizeBy: none
+		sourceColumn: satisfaction
+
+		annotation SummarizationSetBy = Automatic
+
+	column source_split
+		dataType: string
+		isHidden
+		lineageTag: 28f69807-7dd4-5fea-8739-ae97296c6094
+		summarizeBy: none
+		sourceColumn: source_split
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Fact_Flights = m
+		mode: import
+		source =
+			let
+			    Source = Csv.Document(File.Contents(DataFolder & "fact_flights.csv"), [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+			    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+			    Typed = Table.TransformColumnTypes(Promoted, {{"passenger_id", Int64.Type}, {"customer_id", Int64.Type}, {"travel_id", Int64.Type}, {"age", Int64.Type}, {"flight_distance", Int64.Type}, {"dep_delay", Int64.Type}, {"arr_delay", Int64.Type}, {"delay_bucket", type text}, {"delay_bucket_order", Int64.Type}, {"is_delayed_15", Int64.Type}, {"avg_service_rating", type number}, {"services_not_applicable", Int64.Type}, {"is_satisfied", Int64.Type}, {"satisfaction", type text}, {"source_split", type text}}, "en-US")
+			in
+			    Typed
+
+	annotation PBI_ResultType = Table

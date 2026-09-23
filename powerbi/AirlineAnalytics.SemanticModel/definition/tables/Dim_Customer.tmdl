@@ -1,0 +1,67 @@
+table Dim_Customer
+	lineageTag: 5540f6e1-4f5e-5571-94a3-6dbe599c4c68
+
+	column customer_id
+		dataType: int64
+		formatString: 0
+		isHidden
+		lineageTag: 71ae1213-4ace-501e-8261-4980e9c971cd
+		summarizeBy: none
+		sourceColumn: customer_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column gender
+		dataType: string
+		lineageTag: 8c9cb826-a2f8-5877-968d-c03c4c4d28cf
+		summarizeBy: none
+		sourceColumn: gender
+
+		annotation SummarizationSetBy = Automatic
+
+	column customer_type
+		dataType: string
+		lineageTag: 72240634-559f-5983-b65a-937acb6b2e89
+		summarizeBy: none
+		sourceColumn: customer_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column age_band
+		dataType: string
+		lineageTag: 411efc57-6534-5fb9-974d-1fec18f3271b
+		summarizeBy: none
+		sourceColumn: age_band
+		sortByColumn: age_band_order
+
+		annotation SummarizationSetBy = Automatic
+
+	column age_band_order
+		dataType: int64
+		formatString: 0
+		isHidden
+		lineageTag: 96b17d9b-8638-562d-8c58-cf7c1dd12a4a
+		summarizeBy: none
+		sourceColumn: age_band_order
+
+		annotation SummarizationSetBy = Automatic
+
+	column customer_segment
+		dataType: string
+		lineageTag: 1f8a5504-1e1b-5d02-92e5-f7f6e8c51413
+		summarizeBy: none
+		sourceColumn: customer_segment
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Dim_Customer = m
+		mode: import
+		source =
+			let
+			    Source = Csv.Document(File.Contents(DataFolder & "dim_customer.csv"), [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+			    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+			    Typed = Table.TransformColumnTypes(Promoted, {{"customer_id", Int64.Type}, {"gender", type text}, {"customer_type", type text}, {"age_band", type text}, {"age_band_order", Int64.Type}, {"customer_segment", type text}}, "en-US")
+			in
+			    Typed
+
+	annotation PBI_ResultType = Table

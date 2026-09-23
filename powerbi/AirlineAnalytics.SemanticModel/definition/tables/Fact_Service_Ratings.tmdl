@@ -1,0 +1,93 @@
+table Fact_Service_Ratings
+	lineageTag: 12ce9850-1ad2-50e1-b8c3-37873413f779
+
+	/// Average 1-5 rating; 0 ('not applicable') is excluded.
+	measure 'Avg Service Rating' = CALCULATE(AVERAGE(Fact_Service_Ratings[rating]), Fact_Service_Ratings[rating] > 0)
+		formatString: 0.00
+		displayFolder: 5 Service
+		lineageTag: 5ef8d03a-5722-5e3f-b632-cf342924a068
+
+	/// Distance from a perfect 5 - larger = more room to improve.
+	measure 'Service Gap' = 5 - [Avg Service Rating]
+		formatString: 0.00
+		displayFolder: 5 Service
+		lineageTag: a4d4d3ab-76c4-58bb-89b0-0cdc24c7f9fb
+
+	/// Average rating given by satisfied passengers.
+	measure 'Avg Rating (Satisfied)' = CALCULATE([Avg Service Rating], Fact_Flights[is_satisfied] = 1)
+		formatString: 0.00
+		displayFolder: 5 Service
+		lineageTag: 4b5e1805-73b0-5d20-b3e3-0b63b5cc1644
+
+	/// Average rating given by neutral or dissatisfied passengers.
+	measure 'Avg Rating (Dissatisfied)' = CALCULATE([Avg Service Rating], Fact_Flights[is_satisfied] = 0)
+		formatString: 0.00
+		displayFolder: 5 Service
+		lineageTag: f88dbadb-3b73-5583-a2f0-52fb28e4e2c5
+
+	/// How much better satisfied passengers rate a service - a proxy for its influence.
+	measure 'Rating Gap (Sat vs Dissat)' = [Avg Rating (Satisfied)] - [Avg Rating (Dissatisfied)]
+		formatString: 0.00
+		displayFolder: 5 Service
+		lineageTag: f04e04f4-230b-515c-b2cc-a0bfb4c6abeb
+
+	/// Share of applicable ratings that are 1 or 2.
+	measure 'Low Rating %' =
+			DIVIDE(
+			    CALCULATE(COUNTROWS(Fact_Service_Ratings), Fact_Service_Ratings[rating] IN {1, 2}),
+			    CALCULATE(COUNTROWS(Fact_Service_Ratings), Fact_Service_Ratings[rating] > 0)
+			)
+		formatString: 0.0%
+		displayFolder: 5 Service
+		lineageTag: 5f7cb709-baf3-59a8-9d7f-e42f7d2acd46
+
+	/// Share of ratings recorded as 0 (service not applicable).
+	measure 'Not Applicable %' =
+			DIVIDE(
+			    CALCULATE(COUNTROWS(Fact_Service_Ratings), Fact_Service_Ratings[rating] = 0),
+			    COUNTROWS(Fact_Service_Ratings)
+			)
+		formatString: 0.0%
+		displayFolder: 5 Service
+		lineageTag: 7c1b6031-7644-5192-812a-41be30327697
+
+	column passenger_id
+		dataType: int64
+		formatString: 0
+		isHidden
+		lineageTag: 29eef531-af33-50d8-9bfd-757a48f51815
+		summarizeBy: none
+		sourceColumn: passenger_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column service_id
+		dataType: int64
+		formatString: 0
+		isHidden
+		lineageTag: 75c63348-438b-5f09-881c-ac5c2a1a47eb
+		summarizeBy: none
+		sourceColumn: service_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column rating
+		dataType: int64
+		formatString: 0
+		lineageTag: 65620862-8ea1-52a8-8502-eef4a91d8dbe
+		summarizeBy: none
+		sourceColumn: rating
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Fact_Service_Ratings = m
+		mode: import
+		source =
+			let
+			    Source = Csv.Document(File.Contents(DataFolder & "fact_service_ratings.csv"), [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+			    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+			    Typed = Table.TransformColumnTypes(Promoted, {{"passenger_id", Int64.Type}, {"service_id", Int64.Type}, {"rating", Int64.Type}}, "en-US")
+			in
+			    Typed
+
+	annotation PBI_ResultType = Table

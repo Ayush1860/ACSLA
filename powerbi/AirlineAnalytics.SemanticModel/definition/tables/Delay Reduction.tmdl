@@ -1,0 +1,22 @@
+table 'Delay Reduction'
+	lineageTag: b9e21d72-e113-5e1f-8b78-b7aeaea47b9a
+
+	/// What-if parameter: % of >15 min delays eliminated (0-100).
+	measure 'Delay Reduction Value' = SELECTEDVALUE('Delay Reduction'[Delay Reduction %], 0)
+		formatString: 0
+		displayFolder: 3 What-if
+		lineageTag: 3270eafb-79d1-55d5-8452-8b034a0dbf27
+
+	column 'Delay Reduction %'
+		dataType: int64
+		formatString: 0
+		lineageTag: 63c6e774-20b6-5215-95f6-4925fcb543b0
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Delay Reduction %]
+
+		annotation SummarizationSetBy = User
+
+	partition 'Delay Reduction' = calculated
+		mode: import
+		source = SELECTCOLUMNS(GENERATESERIES(0, 100, 5), "Delay Reduction %", [Value])

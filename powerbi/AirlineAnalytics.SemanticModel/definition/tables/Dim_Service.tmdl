@@ -1,0 +1,49 @@
+table Dim_Service
+	lineageTag: ad98ec39-a56a-5d7a-84e6-d1c9ff15099b
+
+	column service_id
+		dataType: int64
+		formatString: 0
+		isHidden
+		lineageTag: a2f1a4ce-d1d3-5f24-bd61-34dc4ad6659d
+		summarizeBy: none
+		sourceColumn: service_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column service_key
+		dataType: string
+		isHidden
+		lineageTag: c9ea5569-5f34-57c8-98c3-05cc0eb8e356
+		summarizeBy: none
+		sourceColumn: service_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column service_name
+		dataType: string
+		lineageTag: 049f7cf0-55e9-5500-a48d-153fd4880c97
+		summarizeBy: none
+		sourceColumn: service_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column journey_stage
+		dataType: string
+		lineageTag: 50a1c24f-11c9-5e10-b0ba-0d5b8d2673c0
+		summarizeBy: none
+		sourceColumn: journey_stage
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Dim_Service = m
+		mode: import
+		source =
+			let
+			    Source = Csv.Document(File.Contents(DataFolder & "dim_service.csv"), [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+			    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+			    Typed = Table.TransformColumnTypes(Promoted, {{"service_id", Int64.Type}, {"service_key", type text}, {"service_name", type text}, {"journey_stage", type text}}, "en-US")
+			in
+			    Typed
+
+	annotation PBI_ResultType = Table

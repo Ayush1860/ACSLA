@@ -1,0 +1,15 @@
+service,baseline,projected,uplift_pts
+Online Boarding,0.4347,0.4915,5.6876
+Inflight Wi-Fi,0.4347,0.4904,5.5715
+Online Booking,0.4347,0.4574,2.2742
+Check-in Service,0.4347,0.4556,2.0889
+On-board Service,0.4347,0.4547,2.0044
+Leg Room,0.4347,0.4526,1.7954
+Cleanliness,0.4347,0.4502,1.5535
+Inflight Service,0.4347,0.4448,1.0116
+Baggage Handling,0.4347,0.4433,0.8649
+Inflight Entertainment,0.4347,0.4387,0.4056
+Seat Comfort,0.4347,0.4357,0.1053
+Food & Drink,0.4347,0.432,-0.2687
+Gate Location,0.4347,0.4188,-1.5832
+Departure/Arrival Time,0.4347,0.4143,-2.0386

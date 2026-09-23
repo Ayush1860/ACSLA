@@ -1,0 +1,15 @@
+relationship bae85020-8995-5e81-a670-208ef8390228
+	fromColumn: Fact_Flights.customer_id
+	toColumn: Dim_Customer.customer_id
+
+relationship cdf242aa-8502-5762-a4fe-b46fe94f7344
+	fromColumn: Fact_Flights.travel_id
+	toColumn: Dim_Travel.travel_id
+
+relationship 589e44cc-840a-5b33-8105-e9e630977c6d
+	fromColumn: Fact_Service_Ratings.passenger_id
+	toColumn: Fact_Flights.passenger_id
+
+relationship d0cea2bb-67b4-5537-85b5-4969acc2301d
+	fromColumn: Fact_Service_Ratings.service_id
+	toColumn: Dim_Service.service_id
