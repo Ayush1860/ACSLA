@@ -175,8 +175,8 @@ Then open **`powerbi/AirlineAnalytics.pbip`** in Power BI Desktop, point the `Da
 parameter at your `data/processed/` folder (Transform data → Edit parameters) and refresh.
 Full steps: [docs/dashboard_build_guide.md](docs/dashboard_build_guide.md).
 
-> **Note:** the `DataFolder` parameter defaults to `C:\ACSLA\data\processed\` and must be
-> changed to your local path (keep the trailing backslash), otherwise the refresh fails.
+> **Note:** the `DataFolder` parameter defaults to `D:\ACSLA\data\processed\` and must be
+> changed if your clone lives elsewhere (keep the trailing backslash), otherwise the refresh fails.
 
 `python scripts/build_pbip.py` regenerates the Power BI semantic model, the report pages and
 `docs/dax_measures.md` from one definition.

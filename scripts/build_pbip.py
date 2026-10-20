@@ -27,7 +27,7 @@ REPORT_DIR = PBI_DIR / f"{NAME}.Report"
 
 # Default folder the Power Query parameter points at. Change it in Power BI via
 # Transform data > Edit parameters > DataFolder (keep the trailing backslash).
-DEFAULT_DATA_FOLDER = "C:\\ACSLA\\data\\processed\\"
+DEFAULT_DATA_FOLDER = "D:\\ACSLA\\data\\processed\\"
 
 NS = uuid.UUID("6f1c2f1e-3d7b-4a58-9a52-5b1f0d6f2a10")
 

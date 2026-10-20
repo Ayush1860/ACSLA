@@ -18,7 +18,7 @@ This guide covers the steps that need Power BI Desktop (Windows).
    Preview features → Power BI Project (.pbip) save option* on older versions).
 3. **Transform data → Edit parameters → `DataFolder`**: set it to the full path of your
    `data/processed/` folder **with a trailing backslash**, e.g.
-   `C:\Users\you\ACSLA\data\processed\`.
+   `D:\ACSLA\data\processed\` (the default).
 4. **Refresh**. The model loads ~130k passengers and ~1.8M rating rows.
 
 ## 2. Apply the theme
